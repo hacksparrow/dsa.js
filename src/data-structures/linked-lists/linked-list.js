@@ -96,7 +96,7 @@ class LinkedList {
       newNode.next = current; // <5>
 
       current.previous.next = newNode; // <6>
-      if (current.next) { current.next.previous = newNode; } // <7>
+      current.previous = newNode; // <7>
       this.size += 1;
       return newNode;
     }
@@ -183,10 +183,10 @@ class LinkedList {
       this.first = head.next;
       if (this.first) {
         this.first.previous = null;
+      } else {
+        this.last = null;
       }
       this.size -= 1;
-    } else {
-      this.last = null;
     }
     return head && head.value;
   }

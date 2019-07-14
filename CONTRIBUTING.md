@@ -104,6 +104,16 @@ format that includes a **type**, a **scope** and a **subject**:
 <footer>
 ```
 
+Example of a commit with header, body and footer:
+
+```
+fix(linked-list): insert in the middle bug
+
+When inserting an item on the middle of a linked list one reference was not being updated properly.
+
+Fixes: #8
+```
+
 The **header** is mandatory and the **scope** of the header is optional.
 
 Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
@@ -127,16 +137,15 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 ### Type
 Must be one of the following:
 
-* **break**: Breaking changes. Remove functionality or change API. Breaks backward compatibility
 * **feat**: A new feature
 * **fix**: A bug fix
+* **docs**: Documentation only changes
 * **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
 * **ci**: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
-* **docs**: Documentation only changes
-* **perf**: A code change that improves performance
+* **test**: Adding missing tests or correcting existing tests
 * **refactor**: A code change that neither fixes a bug nor adds a feature
 * **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **test**: Adding missing tests or correcting existing tests
+* **perf**: A code change that improves performance
 
 ### Scope
 The scope should be the name of the npm package affected (as perceived by the person reading the changelog generated from commit messages.
@@ -169,7 +178,16 @@ reference GitHub issues that this commit **Closes**.
 Closes #234
 ```
 
-**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+**Breaking Changes** should start with the word `BREAKING CHANGE:` on the footer with a space or two newlines. The rest of the commit message is then used for this.
+
+Examples of breaking changes include:
+
+* removal or redefinition of existing API arguments
+* changing return values
+* removing or modifying existing properties on an options argument
+* adding or removing errors
+* altering expected timing of an event
+* changing the side effects of using a particular API
 
 
 ## Generating Changelog
@@ -190,8 +208,13 @@ New features in this release
 ```sh
 git log <last release> HEAD --grep feat
 
-# example
-git log 6.0.0..HEAD --pretty=format:%s | grep feat
-#
-git log 6.0.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" | grep feat
+# examples
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "BREAKING CHANGE:"
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "^feat\S*:"
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "^fix\S*:"
 ```
+
+
+<!-- Examples -->
+<!-- https://github.com/nodejs/node/blob/v12.0.0/COLLABORATOR_GUIDE.md -->
+<!-- https://github.com/nodejs/node/blob/v12.0.0/doc/guides/writing-and-running-benchmarks.md -->

@@ -13,6 +13,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Bug Fixes (patch)
 
+## [1.2.3]
+
+### Breaking Changes (major)
+
+### New Features (minor)
+
+### Bug Fixes (patch)
+- fix(linkedlist): removeFirst's last reference [commit](https://github.com/amejiarosario/dsa.js/commit/d4f9a71f6a22971ad8edcfd982d6b113f627d108)
+
+## [1.2.2]
+
+### Breaking Changes (major)
+
+### New Features (minor)
+
+### Bug Fixes (patch)
+- Optimize NPM package
+
+## [1.2.1]
+
+### Breaking Changes (major)
+
+### New Features (minor)
+
+### Bug Fixes (patch)
+- fix(linked-list): insert in the middle bug [commit](https://github.com/amejiarosario/dsa.js/commit/f8bd4fd8fa6c8dcb0d26f54a6ed7d80e5443d65b)
+- Various docs fixes.
+
 ## [1.2.0] - 2019-04-04
 
 ### Breaking changes (major)
@@ -58,8 +86,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -
 
-
-[Unreleased]: https://github.com/amejiarosario/dsa.js/compare/1.2.0...HEAD
+[Unreleased]: https://github.com/amejiarosario/dsa.js/compare/1.2.3...HEAD
+[1.2.2]: https://github.com/amejiarosario/dsa.js/compare/1.2.2...1.2.3
+[1.2.2]: https://github.com/amejiarosario/dsa.js/compare/1.2.1...1.2.2
+[1.2.1]: https://github.com/amejiarosario/dsa.js/compare/1.2.0...1.2.1
 [1.2.0]: https://github.com/amejiarosario/dsa.js/compare/1.1.0...1.2.0
 [1.1.0]: https://github.com/amejiarosario/dsa.js/compare/1.0.0...1.1.0
 [1.0.0]: https://github.com/amejiarosario/dsa.js/releases/tag/1.0.0

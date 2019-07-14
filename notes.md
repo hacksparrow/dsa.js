@@ -21,12 +21,34 @@ git log <last tag> HEAD --pretty=format:%s
 
 # example
 git log 1.1.0..HEAD --pretty=format:%s
+
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "BREAKING CHANGE:"
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "^feat.*:"
+git log 1.2.0..HEAD --pretty=format:"- %s [commit](https://github.com/amejiarosario/dsa.js/commit/%H)" --grep "^fix.*:"
 ```
 
 New features in this release
 
 ```sh
 git log <last release> HEAD --grep feat
+```
+
+# Generate TOC
+
+Install
+```
+npm install -g doctoc
+```
+
+Add to *.md:
+```
+<!-- START doctoc -->
+<!-- END doctoc -->
+```
+
+Run:
+```
+doctoc README.md
 ```
 
 
